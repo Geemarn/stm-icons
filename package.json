@@ -4,26 +4,26 @@
   "author": "nondefyde",
   "license": "MIT",
   "repository": "https://github.com/STEMuli-Tx/stm-icons",
-  "main": "../dist/index.js",
-  "module": "../dist/index.modern.js",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "types": "dist/index.d.ts",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "../node_modules/.bin/microbundle-crl --no-compress --format modern,cjs",
-    "start": "../node_modules/.bin/microbundle-crl watch --no-compress --format modern,cjs",
-    "prepare": "../node_modules/.bin/run-s build",
-    "test": "../node_modules/.bin/run-s test:unit test:lint test:build",
-    "test:build": "../node_modules/.bin/run-s build",
-    "test:lint": "../node_modules/.bin/eslint .",
-    "test:unit": "../node_modules/.bin/cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "../node_modules/.bin/react-scripts test --env=jsdom",
-    "predeploy": "cd ../example && yarn install && yarn run build",
-    "deploy-storybook": "../node_modules/.bin/gh-pages -d example/storybook-static",
-    "release": "../node_modules/.bin/semantic-release --no-ci",
-    "story:homepage": "http://geemarn.github.io/stm-icons"
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "prepare": "run-s build",
+    "test": "run-s test:unit test:lint test:build",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "predeploy": "cd example && yarn install && yarn run build",
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "release": "semantic-release --no-ci",
+    "story:homepage": "http://geemarn.github.io/stm-icons/"
   },
   "peerDependencies": {
     "react": "^16.0.0"
@@ -61,7 +61,7 @@
     "typescript": "^3.7.5"
   },
   "files": [
-    "../dist"
+    "dist"
   ],
   "publishConfig": {
     "access": "restricted"
